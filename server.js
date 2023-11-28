@@ -37,7 +37,7 @@ app.post('/api/register/user', async (req, res) => {
             phone,
             password
         };
-        console.log(userData);
+        // console.log(userData);
         // POST request to your new registration endpoint
         const edsApiResponse = await axios.post('http://localhost:8080/register/user', userData);
         res.json(edsApiResponse.data);
@@ -73,7 +73,7 @@ app.post('/api/authenticate/user', async (req, res) => {
       
       // Forward the response from EDS API to the client
     //   res.json(edsAuthResponse.data);
-    console.log(edsAuthResponse.data );
+    // console.log(edsAuthResponse.data );
     //   res.json({ token: edsAuthResponse.data });
     res.send(edsAuthResponse.data);
     } catch (error) {
@@ -99,19 +99,29 @@ app.post('/api/authenticate/user', async (req, res) => {
 //     }
 // };
 
-app.get('/api/user/all', async (req, res) => {
+// app.get('/api/user/all', async (req, res) => {
     
+//     const token = req.headers['authorization'];
+//     // console.log(token);
+//     try {
+//         const response = await axios.get('http://localhost:8080/user/all', { headers: { Authorization: token } });
+//         res.json(response.data);
+//     } catch (error) {
+//         console.error('Error in fetching users:', error.message);
+//         res.status(500).send('Internal Server Error');
+//     }
+// });
+app.get('/api/user/self', async (req, res) => {
     const token = req.headers['authorization'];
-    // console.log(token);
     try {
-        const response = await axios.get('http://localhost:8080/user/all', { headers: { Authorization: token } });
+        // console.log(123);
+        const response = await axios.get('http://localhost:8080/user/self', { headers: { Authorization: token } });
         res.json(response.data);
     } catch (error) {
-        console.error('Error in fetching users:', error.message);
+        console.error('Error in fetching user data:', error.message);
         res.status(500).send('Internal Server Error');
     }
 });
-
 // Handle responder registration
 app.post('/api/register/responder', async (req, res) => {
     try {
@@ -153,10 +163,10 @@ app.post('/api/user/send_request', async (req, res) => {
     try {
         const requestData = req.body;
         const token = req.headers['authorization'];
-        console.log(requestData);
-        console.log(token);
+        // console.log(requestData);
+        // console.log(token);
         const response = await axios.post('http://localhost:8080/user/send_request', requestData, { headers: { Authorization: token } });
-        console.log(response);
+        // console.log(response);
         res.json(response.data);
     } catch (error) {
         console.error('Error sending emergency request:', error.message);
@@ -223,14 +233,28 @@ app.post('/api/dispatch-history/finished', async (req, res) => {
     }
 });
 
-
+app.post('/api/dispatch-history/arrived', async (req, res) => {
+    try {
+        const { id } = req.query; // Assuming the ID is sent as a query parameter
+        const token = req.headers['authorization'];
+        console.log(id);
+        // Forward the request to the EDS API
+        const response = await axios.post(`http://localhost:8080/dispatch-history/arrived?id=${id}`, {}, { headers: { Authorization: token } });
+        console.log(21);
+        res.json(response.data);
+    } catch (error) {
+        console.error('Error finishing request:', error.message);
+        res.status(500).send('Internal Server Error');
+    }
+});
 app.post('/api/dispatch-history/rate', async (req, res) => {
     try {
         const { id, rating } = req.query;
         const token = req.headers['authorization'];
-        console.log(id);
-        console.log(rating);
-        console.log(token);
+        // console.log(id);
+
+        // console.log(rating);
+        // console.log(token);
         // Forward the request to the EDS API
         
         const response = await axios.post(`http://localhost:8080/dispatch-history/rate?id=${id}&rating=${rating}`, {}, { headers: { Authorization: token } });

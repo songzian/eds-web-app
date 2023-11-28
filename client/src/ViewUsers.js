@@ -8,7 +8,7 @@ function ViewUsers() {
     useEffect(() => {
         const token = localStorage.getItem('token');
         // console.log(token);
-        axios.get('/api/user/all', { headers: { authorization: `Bearer ${token}` } })
+        axios.get('/api/user/self', { headers: { authorization: `Bearer ${token}` } })
             .then(response => {
                 // console.log('Response data:', response.data);
                 setUsers(response.data);

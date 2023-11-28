@@ -25,6 +25,21 @@ function UserHistory() {
 
         fetchAllHistories();
     }, []);
+    const handleMarkAsArrived = async (historyId) => {
+        try {
+            const token = localStorage.getItem('token');
+            console.log(token);
+            await axios.post(`/api/dispatch-history/arrived`, {}, {
+                params: { id: historyId },
+                headers: { authorization: `Bearer ${token}` }
+            });
+            
+            // Update the history's status in the state
+            setHistories(histories.filter(history => history.id !== historyId));
+        } catch (error) {
+            console.error('Error marking history as arrived:', error);
+        }
+    };
     const handleFinishRequest = async (historyId) => {
         try {
             const token = localStorage.getItem('token');
@@ -63,7 +78,11 @@ function UserHistory() {
             {histories.map(history => (
                 <div key={history.id} className="history-item">
                     <p><strong>ID:</strong> {history.id}</p>
+                    
                     <p><strong>Caller Name:</strong> {history.caller.name}</p>
+                    {history.responder && history.responder.name && (
+                        <p><strong>Responder Name:</strong> {history.responder.name}</p>
+                    )}
                     <p><strong>Caller Phone:</strong> {history.caller.phone}</p>
                     <p><strong>Emergency Level:</strong> {history.emergencyLevel}</p>
                     <p><strong>Emergency Type:</strong> {history.emergencyType}</p>
@@ -72,8 +91,12 @@ function UserHistory() {
                     <p><strong>Status:</strong> {history.status}</p>
                     <p><strong>Start Time:</strong> {history.startTime}</p>
                     <p><strong>Rating:</strong> {history.rating}</p>
+
                     {/* Additional details can be added here */}
-                    {history.status !== 'finished' && (
+                    {history.status === 'dispatched' && (
+                        <button onClick={() => handleMarkAsArrived(history.id)}>Mark as Arrived</button>
+                    )}
+                    {history.status === 'arrived' && (
                         <button onClick={() => handleFinishRequest(history.id)}>Mark as Finished</button>
                     )}
                     {/* Rating input and button */}

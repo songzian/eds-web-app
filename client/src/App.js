@@ -13,6 +13,8 @@ function App() {
   const [user, setUser] = useState(null);
   const [isRegistering, setIsRegistering] = useState(false);
   const [isResponder, setIsResponder] = useState(false);
+  const [showUserHistory, setShowUserHistory] = useState(false);
+  const [showResponderHistory, setShowResponderHistory] = useState(false);
 
   useEffect(() => {
     // Check if user data and role (responder/user) are stored in local storage
@@ -76,19 +78,31 @@ function App() {
       {user && !isResponder && (
         <div>
           <h2>Welcome, {user.username}!</h2>
-          
-          <UserHistory /> {/* Render user history component */}
+{/*           
+          <UserHistory /> Render user history component */}
           <SendEmergencyRequest /> {/* Add the SendEmergencyRequest component */}
 
-          <ViewUsers />
+          {/* <ViewUsers /> */}
           <button onClick={handleLogout}>Logout</button>
+
+          <button onClick={() => setShowUserHistory(!showUserHistory)}>
+            {showUserHistory ? 'Hide' : 'View'} My History
+          </button>
+          {showUserHistory && <UserHistory />}
+
+          
         </div>
       )}
       {user && isResponder && (
         <div>
           <h2>Welcome Responder, {user.username}!</h2>
-          <ResponderHistory /> {/* Render responder history component */}
+          {/* <ResponderHistory /> Render responder history component */}
           <button onClick={handleLogout}>Logout</button>
+
+          <button onClick={() => setShowResponderHistory(!showResponderHistory)}>
+            {showResponderHistory ? 'Hide' : 'View'} Responder Histories
+          </button>
+          {showResponderHistory && <ResponderHistory />}
         </div>
       )}
 {/*       
