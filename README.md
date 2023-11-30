@@ -19,7 +19,7 @@ This document outlines the end-to-end testing procedures for the Emergency Dispa
 ## Test Tools
 - Web browser (e.g., Chrome, Firefox).
 - Postman (for API testing).
-- Database management tool (if needed).
+- Database management tool.
 
 ## Test Cases
 
