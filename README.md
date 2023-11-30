@@ -10,12 +10,6 @@ EDS offers a responsive and user-friendly interface that enables users to swiftl
 - **History Management**: Users have access to their request history, where they can view the status (pending, dispatched, arrived, finished) and manage their requests accordingly.
 - **Responder Functionality**: Dedicated features for first responders and healthcare workers to view and accept emergency requests, and efficiently manage their response history.
 
-## How It Uses the Service
-Our client app interacts seamlessly with the EDS service to provide the following:
-
-- **Secure User Registration and Authentication**: Ensuring a secure and straightforward process for user registration and login.
-Real-Time Request Processing: Rapid processing and dispatching of emergency requests to the appropriate responders.
- Data Integrity and Privacy: Maintaining the security and privacy of user data while providing necessary information to responders.
 
 ## Benefits for the Target Audience
 EDS is tailored to address the unique needs of each user group:
