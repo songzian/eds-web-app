@@ -1,5 +1,25 @@
 # Emergency Dispatch System (EDS) - Client Application
 
+## Introduction
+The Emergency Dispatch System (EDS) is a user-friendly application designed to facilitate quick and efficient communication between individuals seeking emergency assistance and first responders. This application simplifies the process of requesting help during emergencies and enhances the coordination of response efforts.
+
+## Core Functionalities
+EDS allows users and responders to interact through a simple yet effective platform. Key functionalities include:
+
+- **User and Responder Registration and Login**: Straightforward process for users and responders to create accounts and access the system.
+- **Emergency Request Submission (User)**: Users can send emergency requests with essential details like type, location, and severity.
+- **Request Acceptance (Responder)**: Responders can view and accept incoming emergency requests.
+- **Dispatch History Tracking**: Both users and responders can track the status of emergency requests and responses in real-time.
+- **Status Update (User)**: Users can update the status of a request based on the responder's actions (e.g., mark as arrived or finished).
+- **Responder Rating (User)**: After a request is completed, users can rate the responder's service.
+- **History Viewing**: Users and responders can view their history of requests and responses, respectively.
+
+## Benefits for Users and Responders
+With EDS, users and responders can do things more efficiently than before:
+
+- **For Users**: The app provides a quick and easy way to request emergency services, track the status of their request, and rate the response received. This results in faster and more reliable emergency assistance.
+- **For Responders**: Responders have a streamlined way to receive, accept, and manage emergency requests, leading to more effective response coordination.
+- **General Benefits**: The application enhances communication between users and responders, reduces response times, and improves overall satisfaction with emergency services.
 
 
 
