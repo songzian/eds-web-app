@@ -1,6 +1,3 @@
-# eds-web-app
- web application for EDS
-
 # Emergency Dispatch System (EDS) - Client Application
 
 ## Introduction
@@ -30,8 +27,6 @@ EDS is tailored to address the unique needs of each user group:
 - **PreK-2 Teachers**: Quick response mechanisms for educational settings, ensuring the safety and well-being of young children.
 - **First Responders**: Efficient emergency management through categorized requests, aiding in faster and more effective responses.
 
-## Conclusion
-The Emergency Dispatch System revolutionizes the way emergency services are requested and delivered. It empowers our target audience by offering a dependable platform for critical situations, contributing to a safer and more responsive community.
 
 
 
