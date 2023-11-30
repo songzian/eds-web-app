@@ -3,23 +3,7 @@
 ## Introduction
 The Emergency Dispatch System (EDS) is an innovative application designed to streamline the emergency response process for various key groups in our community, including the elderly, eldercare workers, individuals with disabilities, healthcare workers, early childhood educators, and first responders. Our application provides a robust and accessible platform for efficient emergency assistance.
 
-## What the App Does
-EDS offers a responsive and user-friendly interface that enables users to swiftly send emergency requests, track their request history, and interact directly with first responders. Key functionalities include:
 
-- **Emergency Request Submission**: Users can quickly send detailed emergency requests with specific information about the type of emergency and their location.
-- **History Management**: Users have access to their request history, where they can view the status (pending, dispatched, arrived, finished) and manage their requests accordingly.
-- **Responder Functionality**: Dedicated features for first responders and healthcare workers to view and accept emergency requests, and efficiently manage their response history.
-
-
-## Benefits for the Target Audience
-EDS is tailored to address the unique needs of each user group:
-
-- **Elderly**: An easy-to-use interface for quick emergency assistance, catering to those living independently or with age-related challenges.
-- **Eldercare Workers**: Multilingual support to accommodate non-English speakers, ensuring effective communication for caretakers.
-- **Disabled or Impaired**: Accessibility features for users with various impairments, such as vision or hearing difficulties.
-- **Healthcare Workers**: Streamlined process for receiving and responding to medical emergencies, enhancing the ability to provide timely care.
-- **PreK-2 Teachers**: Quick response mechanisms for educational settings, ensuring the safety and well-being of young children.
-- **First Responders**: Efficient emergency management through categorized requests, aiding in faster and more effective responses.
 
 
 
