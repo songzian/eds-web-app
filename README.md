@@ -96,5 +96,4 @@ This document outlines the end-to-end testing procedures for the Emergency Dispa
 **Boundary Cases:**
 - Accept a request and check 'Ongoing Histories'.
 
-## Conclusion
-Document outcomes and issues. Repeat tests for consistency. Investigate and resolve any failures before retesting.
+
