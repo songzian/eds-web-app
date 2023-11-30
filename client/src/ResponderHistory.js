@@ -3,7 +3,11 @@ import axios from 'axios';
 
 function ResponderHistory() {
     const [availableHistories, setAvailableHistories] = useState([]);
-    const [classifiedHistories, setClassifiedHistories] = useState([]);
+    const [pendingHistories, setPendingHistories] = useState([]);
+    const [ongoingHistories, setOngoingHistories] = useState([]);
+    const [finishedHistories, setFinishedHistories] = useState([]);
+    const [showSection, setShowSection] = useState('available'); // 'available', 'pending', 'ongoing', or 'finished'
+
 
     useEffect(() => {
         const fetchAvailableHistories = async () => {
@@ -25,7 +29,10 @@ function ResponderHistory() {
                     const response = await axios.get(`/api/dispatch-history/search?status=${status}`, { headers: { authorization: `Bearer ${token}` } });
                     histories = histories.concat(response.data);
                 }
-                setClassifiedHistories(histories);
+                // setClassifiedHistories(histories);
+                // setPendingHistories(histories.filter(h => h.status === 'pending'));
+                setOngoingHistories(histories.filter(h => h.status === 'dispatched' || h.status === 'arrived'));
+                setFinishedHistories(histories.filter(h => h.status === 'finished'));
             } catch (error) {
                 console.error('Error fetching classified histories:', error);
             }
@@ -67,13 +74,40 @@ function ResponderHistory() {
     };
     return (
         <div>
-            <h2>Responder Histories</h2>
-            <h3>Available Histories</h3>
-            {renderHistoryItems(availableHistories)}
-
-            <h3>Classified Histories</h3>
-            {renderHistoryItems(classifiedHistories)}
+        <h2>Responder Histories</h2>
+        
+        <div className="history-section-buttons">
+            <button onClick={() => setShowSection('available')}>Available Histories</button>
+            {/* <button onClick={() => setShowSection('pending')}>Pending Histories</button> */}
+            <button onClick={() => setShowSection('ongoing')}>Ongoing Histories</button>
+            <button onClick={() => setShowSection('finished')}>Finished Histories</button>
         </div>
+
+        {showSection === 'available' && (
+            <div>
+                <h3>Available Histories</h3>
+                {renderHistoryItems(availableHistories)}
+            </div>
+        )}
+        {/* {showSection === 'pending' && (
+            <div>
+                <h3>Pending Histories</h3>
+                {renderHistoryItems(pendingHistories)}
+            </div>
+        )} */}
+        {showSection === 'ongoing' && (
+            <div>
+                <h3>Ongoing Histories</h3>
+                {renderHistoryItems(ongoingHistories)}
+            </div>
+        )}
+        {showSection === 'finished' && (
+            <div>
+                <h3>Finished Histories</h3>
+                {renderHistoryItems(finishedHistories)}
+            </div>
+        )}
+    </div>
     );
 }
 
