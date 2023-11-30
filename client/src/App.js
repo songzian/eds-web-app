@@ -50,7 +50,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>EDS WEB APP</h1>
+      <h1>Emergency Dispatch for Elderly and Disabled</h1>
 
       {!user && !isRegistering && (
         <div>
