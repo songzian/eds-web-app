@@ -50,13 +50,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Welcome to the User Management System</h1>
+      <h1>EDS WEB APP</h1>
 
       {!user && !isRegistering && (
         <div>
           <button onClick={toggleResponderMode}>Switch to {isResponder ? "User" : "Responder"}</button>
           <button onClick={toggleRegistration}>{isResponder ? "Responder Register" : "Register"}</button>
-          <button onClick={() => setIsRegistering(false)}>{isResponder ? "Responder Login" : "Login"}</button>
+          {/* <button onClick={() => setIsRegistering(false)}>{isResponder ? "Responder Login" : "Login"}</button> */}
         </div>
       )}
 
