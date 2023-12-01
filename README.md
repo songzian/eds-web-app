@@ -64,13 +64,11 @@ This part outlines the end-to-end testing procedures for the Emergency Dispatch 
 
 ## Test Environment
 - Application URL.
-- Access to a test database.
 - Login credentials for user and responder accounts.
 
 ## Test Tools
 - Web browser (e.g., Chrome, Firefox).
 - Postman (for API testing).
-- Database management tool.
 
 ## Test Cases
 
