@@ -7,13 +7,11 @@
 - Access to the EDS service API (or a local setup if available).
 
 ### Building and Running the Application
-0. **Make sure the EDS service is running**:
-1. **Clone the Repository**: 
-2. **Navigate to the Application Directory**:
-3. **Install Dependencies**:
-4. **Configure the Application**:
-- Update the `.env` file in the project root with the necessary API endpoints and any other configuration settings.
-5. **Run the Application**:
+0. **Make sure the EDS service is running**
+1. **Clone the Repository**
+2. **Navigate to the Application Directory**
+3. **Install Dependencies**
+4. **Run the Application**:
 This will start the development server, typically accessible via `http://localhost:3000`.
 
 ### Testing the Application
