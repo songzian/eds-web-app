@@ -34,11 +34,6 @@ With the EDS app:
 - **Better Communication**: The app ensures clear communication between users in need and responders.
 - **Feedback Mechanism**: Users can rate responders, promoting transparency and improvement.
 
-## Conclusion
-The EDS app redefines emergency service delivery, making it more accessible and efficient, especially for the most vulnerable in our community. It empowers users with a reliable, responsive, and user-friendly platform.
-
-
-
 
 
 # End-to-End Test Plan for Emergency Dispatch System
