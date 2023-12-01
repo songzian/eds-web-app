@@ -1,6 +1,26 @@
 # Emergency Dispatch System (EDS) Client Application
 
-## Introduction
+## 1 Instructions
+
+### Prerequisites
+- Node.js and npm (Node Package Manager) installed.
+- Access to the EDS service API (or a local setup if available).
+
+### Building and Running the Application
+1. **Clone the Repository**: 
+2. **Navigate to the Application Directory**:
+3. **Install Dependencies**:
+4. **Configure the Application**:
+- Update the `.env` file in the project root with the necessary API endpoints and any other configuration settings.
+5. **Run the Application**:
+This will start the development server, typically accessible via `http://localhost:3000`.
+
+### Testing the Application
+- Run automated tests (if available):
+- For manual end-to-end testing, follow the test scenarios outlined in the [Test Plan](#end-to-end-test-plan-for-emergency-dispatch-system).
+
+
+## 2 Introduction
 The Emergency Dispatch System (EDS) client app is a specialized tool designed to enhance emergency response efficiency, catering especially to the elderly, disabled, and first responders.
 
 ## What the App Does
@@ -35,28 +55,11 @@ With the EDS app:
 - **Feedback Mechanism**: Users can rate responders, promoting transparency and improvement.
 
 
-### Prerequisites
-- Node.js and npm (Node Package Manager) installed.
-- Access to the EDS service API (or a local setup if available).
-
-### Building and Running the Application
-1. **Clone the Repository**: 
-2. **Navigate to the Application Directory**:
-3. **Install Dependencies**:
-4. **Configure the Application**:
-- Update the `.env` file in the project root with the necessary API endpoints and any other configuration settings.
-5. **Run the Application**:
-This will start the development server, typically accessible via `http://localhost:3000`.
-
-### Testing the Application
-- Run automated tests (if available):
-- For manual end-to-end testing, follow the test scenarios outlined in the [Test Plan](#end-to-end-test-plan-for-emergency-dispatch-system).
 
 
 
 
-
-# End-to-End Test Plan for Emergency Dispatch System
+# 3 End-to-End Test Plan for Emergency Dispatch System
 
 ## Introduction
 This document outlines the end-to-end testing procedures for the Emergency Dispatch System, covering critical functionalities such as user and responder registration, login, emergency request submission, and history management.
