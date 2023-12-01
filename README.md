@@ -15,7 +15,6 @@
 This will start the development server, typically accessible via `http://localhost:3000`.
 
 ### Testing the Application
-- Run automated tests (if available):
 - For manual end-to-end testing, follow the test scenarios outlined in the [Test Plan](#2-end-to-end-test-plan-for-emergency-dispatch-system).
 
 
