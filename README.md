@@ -7,6 +7,7 @@
 - Access to the EDS service API (or a local setup if available).
 
 ### Building and Running the Application
+0. **Make sure the EDS service is running**:
 1. **Clone the Repository**: 
 2. **Navigate to the Application Directory**:
 3. **Install Dependencies**:
