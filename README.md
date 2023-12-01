@@ -17,7 +17,7 @@ This will start the development server, typically accessible via `http://localho
 
 ### Testing the Application
 - Run automated tests (if available):
-- For manual end-to-end testing, follow the test scenarios outlined in the [Test Plan](#end-to-end-test-plan-for-emergency-dispatch-system).
+- For manual end-to-end testing, follow the test scenarios outlined in the [Test Plan](#2. End-to-End Test Plan for Emergency Dispatch System).
 
 
 ## 1.2 Introduction
