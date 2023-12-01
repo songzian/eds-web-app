@@ -62,7 +62,7 @@ With the EDS app:
 # 2. End-to-End Test Plan for Emergency Dispatch System
 
 ## Introduction
-This document outlines the end-to-end testing procedures for the Emergency Dispatch System, covering critical functionalities such as user and responder registration, login, emergency request submission, and history management.
+This part outlines the end-to-end testing procedures for the Emergency Dispatch System, covering critical functionalities such as user and responder registration, login, emergency request submission, and history management.
 
 ## Test Environment
 - Application URL.
