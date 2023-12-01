@@ -1,6 +1,6 @@
-# Emergency Dispatch System (EDS) Client Application
+# 1. Emergency Dispatch System (EDS) Client Application
 
-## 1 Instructions
+## 1.1 Instructions
 
 ### Prerequisites
 - Node.js and npm (Node Package Manager) installed.
@@ -20,7 +20,7 @@ This will start the development server, typically accessible via `http://localho
 - For manual end-to-end testing, follow the test scenarios outlined in the [Test Plan](#end-to-end-test-plan-for-emergency-dispatch-system).
 
 
-## 2 Introduction
+## 1.2 Introduction
 The Emergency Dispatch System (EDS) client app is a specialized tool designed to enhance emergency response efficiency, catering especially to the elderly, disabled, and first responders.
 
 ## What the App Does
@@ -59,7 +59,7 @@ With the EDS app:
 
 
 
-# 3 End-to-End Test Plan for Emergency Dispatch System
+# 2. End-to-End Test Plan for Emergency Dispatch System
 
 ## Introduction
 This document outlines the end-to-end testing procedures for the Emergency Dispatch System, covering critical functionalities such as user and responder registration, login, emergency request submission, and history management.
