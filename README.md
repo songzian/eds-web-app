@@ -1,7 +1,7 @@
 # Emergency Dispatch System (EDS) - Client Application
 
 ## Introduction
-The Emergency Dispatch System (EDS) is a specialized application designed to enhance emergency response efficiency, particularly for vulnerable groups such as the elderly and disabled, as well as streamline the process for first responders.
+The Emergency Dispatch System (EDS) Client Application is a specialized application designed to enhance emergency response efficiency, particularly for vulnerable groups such as the elderly and disabled, as well as streamline the process for first responders.
 
 ## Core Functionalities
 EDS provides a range of features tailored to the needs of its users:
