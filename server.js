@@ -264,3 +264,30 @@ app.post('/api/dispatch-history/rate', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
+
+// New endpoint to search for histories based on distance
+app.get('/api/responder/search_distance', async (req, res) => {
+    try {
+        const { latitude, longitude, radius } = req.query;
+        const token = req.headers['authorization'];
+
+        // Validate the required parameters
+        if (!latitude || !longitude || !radius) {
+            return res.status(400).send('Latitude, longitude, and radius are required');
+        }
+        // console.log(latitude);
+        // console.log(longitude);
+        // console.log(radius);
+        // Construct the URL for the service
+        const serviceUrl = `http://localhost:8080/responder/search_distance?latitude=${latitude}&longitude=${longitude}&radius=${radius}`;
+
+        // Make a GET request to the service
+        const response = await axios.get(serviceUrl, { headers: { Authorization: token } });
+        // console.log(1);
+        // Send back the response from the service
+        res.json(response.data);
+    } catch (error) {
+        console.error('Error fetching history based on distance:', error.message);
+        res.status(500).send('Internal Server Error');
+    }
+});

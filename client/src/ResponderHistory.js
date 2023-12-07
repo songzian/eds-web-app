@@ -7,6 +7,8 @@ function ResponderHistory() {
     const [ongoingHistories, setOngoingHistories] = useState([]);
     const [finishedHistories, setFinishedHistories] = useState([]);
     const [showSection, setShowSection] = useState('available'); // 'available', 'pending', 'ongoing', or 'finished'
+    const [searchParams, setSearchParams] = useState({ latitude: '', longitude: '', radius: '' });
+    const [distanceHistories, setDistanceHistories] = useState([]);
 
 
     useEffect(() => {
@@ -19,6 +21,8 @@ function ResponderHistory() {
                 console.error('Error fetching available histories:', error);
             }
         };
+
+    
 
         const fetchClassifiedHistories = async () => {
             try {
@@ -72,6 +76,17 @@ function ResponderHistory() {
             </div>
         ));
     };
+    const handleSearchByDistance = async () => {
+        try {
+            const token = localStorage.getItem('responderToken');
+            const { latitude, longitude, radius } = searchParams;
+            const response = await axios.get(`/api/responder/search_distance?latitude=${latitude}&longitude=${longitude}&radius=${radius}`, { headers: { authorization: `Bearer ${token}` } });
+            setDistanceHistories(response.data);
+            console.log(distanceHistories.data);
+        } catch (error) {
+            console.error('Error fetching histories based on distance:', error);
+        }
+    };
     return (
         <div>
         <h2>Responder Histories</h2>
@@ -81,7 +96,9 @@ function ResponderHistory() {
             {/* <button onClick={() => setShowSection('pending')}>Pending Histories</button> */}
             <button onClick={() => setShowSection('ongoing')}>Ongoing Histories</button>
             <button onClick={() => setShowSection('finished')}>Finished Histories</button>
+            <button onClick={() => setShowSection('distance')}>Distance Search</button>
         </div>
+        
 
         {showSection === 'available' && (
             <div>
@@ -89,6 +106,24 @@ function ResponderHistory() {
                 {renderHistoryItems(availableHistories)}
             </div>
         )}
+            {showSection === 'distance' && (
+                <div>
+                    <h3>Search Histories by Distance</h3>
+                    {/* Distance Search Form */}
+                    <input type="number" placeholder="Latitude" value={searchParams.latitude} onChange={e => setSearchParams({ ...searchParams, latitude: e.target.value })} />
+                    <input type="number" placeholder="Longitude" value={searchParams.longitude} onChange={e => setSearchParams({ ...searchParams, longitude: e.target.value })} />
+                    <input type="number" placeholder="Radius (km)" value={searchParams.radius} onChange={e => setSearchParams({ ...searchParams, radius: e.target.value })} />
+                    <button onClick={handleSearchByDistance}>Search</button>
+
+                    {renderHistoryItems(distanceHistories)}
+                    {/* Display Distance Search Results */}
+                    {/* {distanceHistories.map(history => (
+                        <div key={history.id} className="history-item">
+                            {renderHistoryItems(distanceHistories)}
+                        </div>
+                    ))} */}
+                </div>
+            )}
         {/* {showSection === 'pending' && (
             <div>
                 <h3>Pending Histories</h3>
