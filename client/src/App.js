@@ -86,7 +86,7 @@ function App() {
           <button onClick={handleLogout}>Logout</button>
 
           <button onClick={() => setShowUserHistory(!showUserHistory)}>
-            {showUserHistory ? 'Hide' : 'View'} My History
+            {showUserHistory ? 'Hide' : 'View'} My Requests
           </button>
           {showUserHistory && <UserHistory />}
 
@@ -100,7 +100,7 @@ function App() {
           <button onClick={handleLogout}>Logout</button>
 
           <button onClick={() => setShowResponderHistory(!showResponderHistory)}>
-            {showResponderHistory ? 'Hide' : 'View'} Responder Histories
+            {showResponderHistory ? 'Hide' : 'View'} Responder Requests
           </button>
           {showResponderHistory && <ResponderHistory />}
         </div>

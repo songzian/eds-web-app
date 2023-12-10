@@ -89,26 +89,26 @@ function ResponderHistory() {
     };
     return (
         <div>
-        <h2>Responder Histories</h2>
+        <h2>Responder Requests</h2>
         
         <div className="history-section-buttons">
-            <button onClick={() => setShowSection('available')}>Available Histories</button>
+            <button onClick={() => setShowSection('available')}>Available Requests</button>
             {/* <button onClick={() => setShowSection('pending')}>Pending Histories</button> */}
-            <button onClick={() => setShowSection('ongoing')}>Ongoing Histories</button>
-            <button onClick={() => setShowSection('finished')}>Finished Histories</button>
+            <button onClick={() => setShowSection('ongoing')}>Ongoing Requests</button>
+            <button onClick={() => setShowSection('finished')}>Finished Requests</button>
             <button onClick={() => setShowSection('distance')}>Distance Search</button>
         </div>
         
 
         {showSection === 'available' && (
             <div>
-                <h3>Available Histories</h3>
+                <h3>Available Requests</h3>
                 {renderHistoryItems(availableHistories)}
             </div>
         )}
             {showSection === 'distance' && (
                 <div>
-                    <h3>Search Histories by Distance</h3>
+                    <h3>Search Requests by Distance</h3>
                     {/* Distance Search Form */}
                     <input type="number" placeholder="Latitude" value={searchParams.latitude} onChange={e => setSearchParams({ ...searchParams, latitude: e.target.value })} />
                     <input type="number" placeholder="Longitude" value={searchParams.longitude} onChange={e => setSearchParams({ ...searchParams, longitude: e.target.value })} />
@@ -132,13 +132,13 @@ function ResponderHistory() {
         )} */}
         {showSection === 'ongoing' && (
             <div>
-                <h3>Ongoing Histories</h3>
+                <h3>Ongoing Requests</h3>
                 {renderHistoryItems(ongoingHistories)}
             </div>
         )}
         {showSection === 'finished' && (
             <div>
-                <h3>Finished Histories</h3>
+                <h3>Finished Requests</h3>
                 {renderHistoryItems(finishedHistories)}
             </div>
         )}

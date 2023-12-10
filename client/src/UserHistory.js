@@ -142,9 +142,9 @@ function UserHistory() {
 
     return (
         <div>
-            <h2>User History</h2>
+            <h2>User Log</h2>
             <div>
-                <h3>Ongoing Histories</h3>
+                <h3>Ongoing Request</h3>
                 {ongoingHistories.length > 0 ? (
                     ongoingHistories.map(renderHistoryItem)
                 ) : (
@@ -152,7 +152,7 @@ function UserHistory() {
                 )}
             </div>
             <div>
-                <h3>Finished Histories</h3>
+                <h3>Finished Requests</h3>
                 {finishedHistories.length > 0 ? (
                     finishedHistories.map(renderHistoryItem)
                 ) : (
